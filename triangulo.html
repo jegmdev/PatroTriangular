@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrón de Números Triangulares</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .pattern {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #28007D;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28007D;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #1a0056;
+    }
+    
+</style>
+<body>
+    <div class="pattern">
+        <h1>Patrón de Números Triangulares</h1>
+        <button onclick="imprimirPatron()">Imprimir Patrón</button>
+    </div>
+</body>
+<script>
+    function imprimirPatron() {
+        // Obtener el número desde el usuario
+        const numero = parseInt(prompt("Ingrese un número para imprimir el patrón de números triangulares:"));
+    
+        // Verificar si el usuario ingresó un número válido
+        if (isNaN(numero) || numero < 1) {
+            alert("Por favor, ingrese un número válido mayor o igual a 1.");
+            return;
+        }
+    
+        // Inicializar el patrón
+        let resultado = "";
+    
+        // Usar bucle "for" anidado para construir el patrón
+        for (let i = 1; i <= numero; i++) {
+            for (let j = 1; j <= i; j++) {
+                resultado += j + " ";
+            }
+            resultado += "\n";
+        }
+    
+        // Mostrar el patrón
+        alert("Patrón de números triangulares:\n" + resultado);
+    }    
+</script>
+</html>
